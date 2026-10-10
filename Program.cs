@@ -21,7 +21,7 @@ class Program
             Console.WriteLine("4. Dividir");
             Console.WriteLine("5. Evaluar Estudiante (¿Aprobó o Reprobó?)");
             Console.WriteLine("6. Salir");
-            Console.Write("\nElige una opción (1-6): ");
+            Console.Write("Elige una opción (1-6): ");
 
             string opcion = Console.ReadLine();
 
@@ -44,17 +44,17 @@ class Program
                     EvaluarEstudiante();
                     break;
                 case "6":
-                    Console.WriteLine("\nOK ten un buen dia ");
+                    Console.WriteLine("OK ten un buen dia ");
                     continuar = false;
                     break;
                 default:
-                    Console.WriteLine("\n ¡¡¡Error!!! Opción no válida. Por favor, elige otro número.");
+                    Console.WriteLine(" ¡¡¡Error!!! Por favor, elige otro número.");
                     break;
             }
 
             if (continuar)
             {
-                Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+                Console.WriteLine("Presiona cualquier tecla para continuar...");
                 Console.ReadKey();
             }
         }
@@ -62,7 +62,7 @@ class Program
 
     static void RealizarOperacion(string tipo)
     {
-        Console.WriteLine($"\n--- Operación: {tipo} ---");
+        Console.WriteLine($"--- Operación: {tipo} ---");
         try
         {
             Console.Write("Ingresa el primer número: ");
@@ -88,18 +88,18 @@ class Program
                     // para evitar que el usuario divida entre 0 
                     if (num2 == 0)
                     {
-                        Console.WriteLine("\n[Error] ¡No se puede dividir entre cero!");
+                        Console.WriteLine("[Error] ¡No se puede dividir entre cero!");
                         return;
                     }
                     resultado = num1 / num2;
                     break;
             }
 
-            Console.WriteLine($"\nEl resultado de la {tipo.ToLower()} es: {resultado}");
+            Console.WriteLine($"El resultado de la {tipo.ToLower()} es: {resultado}");
         }
         catch (FormatException)
         {
-            Console.WriteLine("\n¡¡¡Error!!! Entrada inválida. Por favor, asegúrate de ingresar solo números.");
+            Console.WriteLine("¡¡¡Error!!! Por favor, ingresar solo números.");
         }
        
     }
@@ -108,7 +108,7 @@ class Program
     // Calificación del estudiante
     static void EvaluarEstudiante()
     {
-        Console.WriteLine("\n--- Evaluación de Estudiante ---");
+        Console.WriteLine("--- Evaluación de Estudiante ---");
         try
         {
             Console.Write("Ingresa la calificación final (0 - 100): ");
@@ -117,24 +117,24 @@ class Program
             // laa calificaciones no pueden ser mayores a 100 ni menores a 0
             if (calificacion < 0 || calificacion > 100)
             {
-                Console.WriteLine("\n ¡¡¡Error!!! La calificación debe estar en el rango de 0 a 100.");
+                Console.WriteLine("¡¡¡Error!!! La calificación debe estar en el rango de 0 a 100.");
                 return;
             }
 
             // si el estudiante tiene una calificacion de 70 para arriba pasa si no reprueba
             if (calificacion >= 70)
             {
-                Console.WriteLine($"\n¡Felicidades! Con {calificacion} puntos, el estudiante ha **APROBADO**.");
+                Console.WriteLine($"Felicidades! Con {calificacion} puntos, el estudiante ha **APROBADO**.Suerte la proxima estudie mas que esta flojo");
             }
             else
             {
-                Console.WriteLine($"\nLo sentimos. Con {calificacion} puntos, el estudiante ha **REPROBADO**.");
+                Console.WriteLine($"Lo sentimos. Con {calificacion} puntos, el estudiante ha **REPROBADO**.Muy bien te mereces un chicle");
             }
         }
         // por si llega a poner una letra o algo por el estilo 
         catch (FormatException)
         {
-            Console.WriteLine("\n¡¡¡Error!!! Entrada inválida. Por favor, ingresa un valor numérico para la calificación.");
+            Console.WriteLine("¡¡¡Error!!! Por favor, ingresa un valor numérico para la calificación.");
         }
         
     }
